@@ -10,5 +10,6 @@ cd mp4box
 main() {
   docker build . -t local/mp4box:0.0.1
   docker run --rm -it --name mp4box -v $(pwd):/work -u $(id -u):$(id -g) local/mp4box:0.0.1 -version
+  docker run --rm -it --name mp4box -v $(pwd):/work -u $(id -u):$(id -g) --entrypoint /usr/local/bin/ffmpeg local/mp4box:0.0.1 -version
 } && main
 ```
