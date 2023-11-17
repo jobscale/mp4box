@@ -5,7 +5,7 @@
 #### run with container
 
 ```bash
-git clone https://github.com/jobscale/mp4box.git
+git clone git@github.com:jobscale/mp4box.git
 cd mp4box
 main() {
   docker build . -t local/mp4box:0.0.1
