@@ -2,7 +2,7 @@ FROM ubuntu:xenial
 SHELL ["bash", "-c"]
 WORKDIR /work
 COPY pkg .
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && (dpkg -i *.deb || apt-get install -y --no-install-recommends -f || echo ng) \
  && apt-get install -y --no-install-recommends -f && dpkg -i *.deb \
  && apt-get clean && rm -fr /var/lib/apt/lists/*
